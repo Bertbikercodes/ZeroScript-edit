@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "ZeroScript Free × Roblox Studio Agent",
   "version": "1.5.5",
-  "description": "Turn ChatGPT, DeepSeek, Gemini, Kimi, GLM, Qwen, Arena or Meta AI into a Roblox Studio agent that drives Studio through a local bridge.",
+  "description": "Turn ChatGPT, DeepSeek, Gemini, Kimi, GLM, Qwen, Arena, Copilot or Meta AI into a Roblox Studio agent that drives Studio through a local bridge.",
   "permissions": ["storage"],
   "host_permissions": [
     "https://chat.deepseek.com/*",
@@ -15,6 +15,9 @@
     "https://chat.z.ai/*",
     "https://chat.qwen.ai/*",
     "https://arena.ai/*",
+    "https://copilot.microsoft.com/*",
+    "https://www.bing.com/*",
+    "https://bing.com/*",
     "https://www.meta.ai/*",
     "https://meta.ai/*",
     "http://127.0.0.1/*",
@@ -77,6 +80,12 @@
     {
       "matches": ["https://arena.ai/*"],
       "js": ["core/config.js", "core/parser.js", "providers/arena.js", "core/main.js"],
+      "css": ["overlay.css"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://copilot.microsoft.com/*", "https://www.bing.com/*", "https://bing.com/*"],
+      "js": ["core/config.js", "core/parser.js", "providers/copilot.js", "core/main.js"],
       "css": ["overlay.css"],
       "run_at": "document_idle"
     },
